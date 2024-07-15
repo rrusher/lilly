@@ -1,5 +1,5 @@
-# Your Project's Title...
-Your project's description...
+# Lilly.com POC
+Demonstration of Edge Delivery Services for Eli Lilly.
 
 ## Environments
 - Preview: https://main--lilly--rrusher.aem.page/
