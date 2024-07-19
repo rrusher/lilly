@@ -1,0 +1,18 @@
+main .section > div.alert-wrapper {
+  max-width: unset;
+  padding: 0;
+  margin: auto;
+}
+
+.alert.block {
+  background-color: #e6f1f5;
+  border-color: #00749e;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: none;
+  font-weight: 400;
+  margin-bottom: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

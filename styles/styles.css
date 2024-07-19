@@ -19,7 +19,8 @@
   /* colors */
   --text-color: #212121;
   --link-color: #007bff;
-  --link-hover-color: Invalid input color;
+  --link-hover-color: #0078a3;
+  --button-color: #d52b1e;
   --background-color: #ffffff;
   --overlay-background-color: #eeeeee;
   --highlight-background-color: #cccccc;
@@ -37,7 +38,7 @@
   --body-font-size-s: 12px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 116px;
 }
 
 @font-face {
@@ -92,8 +93,15 @@ h6 {
 
 h1 { font-size: var(--heading-font-size-xxl); }
 h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
+h3 { font-size: var(--heading-font-size-s);
+  font-weight: 300;
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;}
+h4 { font-size: var(--heading-font-size-m);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
@@ -154,19 +162,32 @@ button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--button-color);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: px;
+}
+
+p.button-container a {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+  color: #fff;
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: calc(.5rem - 2px) calc(1.5rem - 2px);
+  transition: background-color .25s ease, color .25s ease;
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: #af261b;
   cursor: pointer;
 }
 
@@ -201,14 +222,10 @@ main img {
 }
 
 /* sections */
-main .section {
-  padding: 64px 16px;
-}
-
-@media (width >= 600px) {
-  main .section {
-    padding: 64px 32px;
-  }
+main .section > div {
+  max-width: var(--section-max-width);
+  margin: 2rem auto;
+  padding: 0 2rem;
 }
 
 @media (width >= 900px) {

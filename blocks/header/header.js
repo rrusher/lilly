@@ -1,5 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { domEl, div } from '../../scripts/dom-helpers.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -98,15 +99,20 @@ export default async function decorate(block) {
 
   // decorate nav DOM
   block.textContent = '';
-  const nav = document.createElement('nav');
-  nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  const nav = domEl('nav', { id: 'nav' });
+  const navrow = div({ class: 'nav-row' });
+  const classes = ['brand', 'sections', 'tools', 'global'];
+  let i = 0;
 
-  const classes = ['brand', 'sections', 'tools'];
-  classes.forEach((c, i) => {
-    const section = nav.children[i];
-    if (section) section.classList.add(`nav-${c}`);
-  });
+  while (fragment.firstElementChild) {
+    const child = fragment.firstElementChild;
+    if (i < classes.length) {
+      child.classList.add(`nav-${classes[i]}`);
+    }
+    (i < 3 ? navrow : nav).append(child);
+    i++;
+  }
+  nav.append(navrow);
 
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');

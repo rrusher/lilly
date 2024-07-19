@@ -22,11 +22,25 @@ const LCP_BLOCKS = []; // add your LCP blocks to the list
 function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
+  const pictureParent = picture?.parentElement;
   // eslint-disable-next-line no-bitwise
   if (h1 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-    const section = document.createElement('div');
-    section.append(buildBlock('hero', { elems: [picture, h1] }));
-    main.prepend(section);
+    const section = picture.closest('div');
+    const elems = [picture];
+    const h1Section = h1.closest('div');
+    if (h1Section === section) {
+      elems.push(h1);
+      let nextSib = h1.nextElementSibling;
+      while (nextSib && (nextSib.tagName === 'P' || nextSib.classList.contains('button-container'))) {
+        elems.push(nextSib);
+        nextSib = nextSib.nextElementSibling;
+      }
+    }
+    section.append(buildBlock('hero', { elems }));
+    // picture was likely wrapped in a p that is now empty, so remove that
+    if (pictureParent && pictureParent.tagName === 'P' && pictureParent.innerText.trim() === '') {
+      pictureParent.remove();
+    }
   }
 }
 
@@ -40,6 +54,25 @@ async function loadFonts() {
   } catch (e) {
     // do nothing
   }
+}
+
+/**
+ * load a script by adding to page head
+ * @param {string} url the script src url
+ * @param {function} callback a funciton to callback after loading
+ */
+export function loadScript(url, callback) {
+  const head = document.querySelector('head');
+  let script = head.querySelector(`script[src="${url}"]`);
+  if (!script) {
+    script = document.createElement('script');
+    script.src = url;
+    script.defer = true;
+    head.append(script);
+    script.onload = callback;
+    return script;
+  }
+  return script;
 }
 
 /**
