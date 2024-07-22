@@ -16,3 +16,14 @@ main .section > div.alert-wrapper {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.alert.block p span.icon {
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+}
+
+.alert.block p .icon img {
+  filter: invert(42%) sepia(86%) saturate(3188%) hue-rotate(164deg) brightness(96%) contrast(95%);
+  vertical-align: middle;
+}
