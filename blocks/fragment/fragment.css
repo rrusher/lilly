@@ -11,3 +11,180 @@
 .fragment-wrapper > .section:last-of-type {
   padding-bottom: 0;
 }
+/* 2 column version of the fragment */
+div.fragment.two-col > div {
+  text-decoration: none;
+  box-sizing: inherit;
+  position: relative;
+  padding: 64px 40px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+div.fragment.two-col > div > div {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+div.fragment.two-col > div > .leftcolumn {
+  flex: 1 0 75%;
+}
+
+div.fragment.two-col > div > .rightcolumn {
+  margin-left: 0;
+  flex: 1 0 25%;
+}
+
+.fragment.two-col .columns > div {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0;
+}
+
+div.fragment.two-col a:any-link {
+  color: var(--link-color);
+}
+
+div.fragment.two-col a:any-link:hover {
+  color: var(--link-hover-color);
+}
+
+div.fragment.two-col .columns-img-col a {
+width: 100%;
+}
+
+div.fragment.two-col li > a:hover, div.fragment.two-col li > strong > a:hover {
+text-decoration: underline;
+}
+
+div.fragment.two-col p a:any-link {
+display: block;
+text-decoration: underline;
+}
+
+div.fragment.two-col a.button.primary {
+border-radius: unset;
+background-color: transparent;
+border: unset;
+height: auto;
+margin: 0 0 1rem 0;
+padding: 0;
+box-shadow: none;
+font-weight: 500;
+white-space: unset;
+text-align: left;
+}
+
+div.fragment.two-col .fragment-link {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: .075rem;
+  line-height: 2rem;
+}
+
+div.fragment.two-col .fragment-link::after {
+  background-color: #000;
+  content: "";
+  display: block;
+  height: .2rem;
+  width: 100%;
+}
+
+div.fragment.two-col h2 {
+  font-size: 2.9rem;
+  font-weight: 500;
+  letter-spacing: -.15rem;
+  line-height: 3.2rem;
+}
+
+div.fragment.two-col .leftcolumn .default-content-wrapper {
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+div.fragment.two-col .leftcolumn .default-content-wrapper h3 {
+  font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2.5rem;
+  text-align: left;
+}
+
+div.fragment.two-col ul {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: .025rem;
+  line-height: 1.6rem;
+  column-gap: 4rem;
+}
+
+div.fragment.two-col ul li {
+margin-bottom: 1rem;
+}
+
+div.fragment.two-col ul li::marker {
+  color: var(--accent-color);
+}
+
+div.fragment-container.two-col + .section {
+max-width: 990pt;
+margin-left: auto;
+margin-right: auto;
+}
+
+div.fragment-container.two-col + .section .default-content-wrapper {
+max-width: 74.6rem;
+margin-left: 0;
+}
+
+
+div.fragment-container.two-col + .section .default-content-wrapper > ol {
+font-size: 1.2rem;
+font-weight: 400;
+letter-spacing: .025rem;
+line-height: 1.6rem;
+margin-top: 7rem;
+counter-reset: item;
+padding: 0;
+list-style: none;
+}
+
+div.fragment-container.two-col + .section .default-content-wrapper > ol > li {
+margin: 0 0 5px;
+position: relative;
+display: block;
+padding: 0 0 0 1.5rem;
+}
+
+div.fragment-container.two-col + .section .default-content-wrapper > ol > li::before {
+content: counter(item);
+counter-increment: item;
+position: absolute;
+vertical-align: super;
+font-size: x-small;
+left: 0.6rem;
+top: -0.6rem;
+}
+
+.fragment.two-col .rightcolumn div > p > em > a {
+  text-decoration: none;
+  color: var(--button-color);
+  white-space: unset;
+  padding: 8px 0;
+}
+
+.fragment.two-col.block > div > div.section.rightcolumn.columns-container > div,
+.fragment.two-col.block > div > div.section.rightcolumn.columns-container > div > p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 8px 0 0;
+}
+
+@media (min-width: 900px) {
+  div.fragment.two-col > div {
+    display: flex;
+    flex-direction: row;
+  }
+}

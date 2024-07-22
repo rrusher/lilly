@@ -18,8 +18,8 @@
 
   /* colors */
   --text-color: #212121;
-  --link-color: #007bff;
-  --link-hover-color: #0078a3;
+  --link-color: #0078a3;
+  --link-hover-color: #007bff;
   --button-color: #d52b1e;
   --background-color: #ffffff;
   --overlay-background-color: #eeeeee;
@@ -39,6 +39,7 @@
 
   /* nav height */
   --nav-height: 116px;
+  --section-max-width: 1600px;
 }
 
 @font-face {
@@ -226,6 +227,10 @@ main .section > div {
   max-width: var(--section-max-width);
   margin: 2rem auto;
   padding: 0 2rem;
+}
+
+main .section.center {
+
 }
 
 @media (width >= 900px) {

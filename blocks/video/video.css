@@ -1,13 +1,25 @@
+.section .video-wrapper {
+  margin: 0;
+  padding: 0;
+  height: 70%;
+}
+
 .video.block {
   width: 100%;
   display: flex;
   justify-content: center;
   margin: auto;
-  padding: 20px 0;
 }
 
 .video.block .video-player {
   width: 95%;
+}
+
+.video.block .overlay {
+  position: absolute;
+  z-index: 10;
+  width: 90%;
+  height: 90%;
 }
 
 @media (min-width: 600px) {
@@ -19,7 +31,7 @@
 
 @media (min-width: 900px) {
   .video.block {
-    max-width: var(--page-max-width);
+    max-width: var(--section-max-width);
   }
 
   .video.block .video-player {
