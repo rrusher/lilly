@@ -17,6 +17,11 @@ main .section > div.alert-wrapper {
   padding-right: 1rem;
 }
 
+.alert.block.red {
+  background-color: #f8d7da;
+  border-color: #721c24;
+}
+
 .alert.block p span.icon {
   margin-right: 8px;
   height: 16px;
