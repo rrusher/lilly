@@ -33,7 +33,6 @@ footer > div {
 
 footer .row {
   display: flex;
-  flex-wrap: wrap;
   margin-left: -16px;
   margin-right: -16px;
 }
@@ -88,6 +87,13 @@ footer .mt-3 {
 footer .lds-privacy-choices .icon-margin {
   margin-right: 8px;
 }
+footer > div > div > div > div.lds-footer-meta > div > div.lds-footer-cookie-consent-reset > div > div:nth-child(1) {
+  display: inline-flex;
+}
+footer > div > div > div > div.lds-footer-meta > div > div.lds-footer-cookie-consent-reset > div > div:nth-child(1) > a {
+  font-size: 12px;
+}
+
 @media (min-width: 768px) {
   footer .footer {
       text-align: left;
@@ -114,6 +120,26 @@ footer .lds-privacy-choices .icon-margin {
   .footer .col-md-9 {
     flex: 0 0 69%;
     max-width: 69%;
+  }
+  footer .col-12.lds-footer-logo {
+    height: auto;
+    width: 88px;
+    order: -1;
+    filter: brightness(0) saturate(100%) invert(17%) sepia(79%) saturate(7473%) hue-rotate(348deg) brightness(98%) contrast(106%);
+    margin-top: 35px;
+  }
+  footer div.lds-footer-social-icons,
+  footer div.lds-footer-global-links {
+    display: flex;
+    justify-content: flex-end;
+  }
+  footer div.lds-footer-social-icons a,
+  footer div.lds-footer-global-links a {
+    margin: 10px;
+  }
+  body > footer > div > div > div > div:nth-child(3) > div.col-12.col-md-auto.order-md-2.ml-auto {
+    margin-left: auto;
+    margin-top: 10px;
   }
 }
 

@@ -266,7 +266,7 @@ header nav .nav-tools {
   }
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
+    top: .6em;
     bottom: 0.5em;
     transform: rotate(315deg);
   }
@@ -300,11 +300,11 @@ header nav .nav-tools {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     width: 100vw;
-    margin-top: 19px;
+    margin-top: 31px;
     padding: 1em;
     background-color: white;
     white-space: initial;

@@ -39,7 +39,7 @@ div.section.rightcolumn.columns-container > div.columns-wrapper > div > div > di
   font-size: 16px;
 }
 
-@media (width >= 900px) {
+@media (width > 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
@@ -49,5 +49,14 @@ div.section.rightcolumn.columns-container > div.columns-wrapper > div > div > di
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns.large > div > div:first-child {
+    flex: 1 0 55%;
+    order: unset;
+  }
+
+  .columns.large > div:last-child {
+    border-bottom: 0;
   }
 }
